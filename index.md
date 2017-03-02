@@ -11,16 +11,14 @@ For the purposes of my guide you need to follow these steps to start using the S
 1. Create a Spotify account
 1. Create a new app from their developer site
 1. Set redirect URI
-1. Acquire your API key under your applications "Client Secret"
+1. Acquire your API key under your application's details; Spotify named it "Client Secret"
 
 # Applying the APIs
 
 ### IDs (Artists, albums, etc)
-One of the aspects that seems that is importants to retrieve information is IDs. For Spotif uses these IDs to specify things such as artist, album, and playlists. The guide on the API explains fairly how to use these IDs.
+One of the things that seems important to retrieve information is "ID"s. Their are Spotify API that uses these IDs to specify search for things such as artist, albums, and playlists. The guide on the API site explains how to use these IDs pretty well, however I had a hard time finding out how to acquire these ID. 
 
---> Pic of Example <--
-
-However, I had a hard to finding out how to get this ID. In my own application, I took an input of an artist name and retrieved the data from Spotify. From this I found the ID within the object for the artist given. 
+To solve this problem, in my own application, I took an input of an artist name and retrieved the data from Spotify using the "GET An Artist" API. From this I found the ID within the object for the artist given. With this ID I was able to do more things that related to the specific artist in question.
 --> Pic <--
 
 ### GET Artist

@@ -20,10 +20,12 @@ One of the things that seems important to retrieve information is "ID"s. Their a
 
 To solve this problem, in my own application, I took an input of an artist name and retrieved the data from Spotify using the "GET An Artist" API. From this I found the ID within the object for the artist given. With this ID I was able to do more things that related to the specific artist in question.
 
-`<var apiKey = null;
-var api_url = 'http://api.spotify.com';
 
-document.getElementById('artist_name_button').addEventListener('click', function(event) {
+        var apiKey = null;
+        var api_url = 'http://api.spotify.com';
+
+        document.getElementById('artist_name_button').addEventListener('click', function(event) {
+        
         var req = new XMLHttpRequest();
         var artist_name = document.getElementById('artist_name').value;
         console.log(artist_name);
@@ -43,9 +45,8 @@ document.getElementById('artist_name_button').addEventListener('click', function
                         console.log('Error in network request');
                 };
         });
-});
+        });
 
->`
 --> Pic <--
 
 ### GET Artist

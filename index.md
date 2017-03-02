@@ -26,25 +26,24 @@ To solve this problem, in my own application, I took an input of an artist name 
 
         document.getElementById('artist_name_button').addEventListener('click', function(event) {
         
-        var req = new XMLHttpRequest();
-        var artist_name = document.getElementById('artist_name').value;
-        console.log(artist_name);
+                var req = new XMLHttpRequest();
+                var artist_name = document.getElementById('artist_name').value;
 
-        req.open("GET", api_url + "/v1/search?q=" + artist_name + "&type=artist&market=US" , true);
-        req.send(null);
+                req.open("GET", api_url + "/v1/search?q=" + artist_name + "&type=artist&market=US" , true);
+                req.send(null);
 
-        req.addEventListener('load', function(){
-                if(req.status >= 200 && req.status < 400){
-                        var response = {};
-                        response = JSON.parse(req.responseText);
-                        console.log(JSON.parse(req.responseText));
-                        var id = response.artists.items[0].id;
-                        artist_albums(id);
-                        event.preventDefault();
-                }else{
-                        console.log('Error in network request');
-                };
-        });
+                req.addEventListener('load', function(){
+                        if(req.status >= 200 && req.status < 400){
+                                var response = {};
+                                response = JSON.parse(req.responseText);
+                                console.log(JSON.parse(req.responseText));
+                                var id = response.artists.items[0].id;
+                                artist_albums(id);
+                                event.preventDefault();
+                        }else{
+                                console.log('Error in network request');
+                        };
+                 });
         });
 
 --> Pic <--

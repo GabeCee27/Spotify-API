@@ -6,10 +6,12 @@ In addition, I talk about my use of the API in my own web application.
 
 #Getting Started
 
-To start using the Spotify API you need to set up a few things.
+For the purposes of my guide you need to follow these steps to start using the Spotify API.
 
 1. Create a Spotify account
-2. Create an app from their developer site
+2. Create a new app from their developer site
+3. Set redirect URI
+4. Acquire your API key under your applications "Clinet Secret"
 
 #Applying the APIs
 

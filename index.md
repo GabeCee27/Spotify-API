@@ -11,6 +11,8 @@ To start using the Spotify API you need to set up a few things.
 1. Create a Spotify account
 2. Create an app from their developer site
 
+#Applying the APIs
+
 ##IDs (Artists, albums, etc)
 One of the aspects that seems that is importants to retrieve information is IDs. For Spotif uses these IDs to specify things such as artist, album, and playlists. The guide on the API explains fairly how to use these IDs.
 

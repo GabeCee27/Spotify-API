@@ -15,44 +15,37 @@ For the purposes of my guide you need to follow these steps to start using the S
 
 # Applying the APIs
 
-### IDs (Artists, albums, etc)
-One of the things that seems important to retrieve information is "ID"s. Their are Spotify API that uses these IDs to specify search for things such as artist, albums, and playlists. The guide on the API site explains how to use these IDs pretty well, however I had a hard time finding out how to acquire these ID. 
-
-To solve this problem, in my own application, I used the "GET An Artist" API and analysed the information sent back.
-
-        var apiKey = null;
-        var api_url = 'http://api.spotify.com';
-
-        document.getElementById('artist_name_button').addEventListener('click', function(event) {
-        
-                var req = new XMLHttpRequest();
-                var artist_name = document.getElementById('artist_name').value;
-
-                req.open("GET", api_url + "/v1/search?q=" + artist_name + "&type=artist&market=US" , true);
-                req.send(null);
-
-                req.addEventListener('load', function(){
-                        if(req.status >= 200 && req.status < 400){
-                                var response = {};
-                                response = JSON.parse(req.responseText);
-                                console.log(JSON.parse(req.responseText));
-                                var id = response.artists.items[0].id;
-                                artist_albums(id);
-                                event.preventDefault();
-                        }else{
-                                console.log('Error in network request');
-                        };
-                 });
-        });
-
-In this snippet I took the input from an html page and used it to retrieve an aritist's Spotify detials, including their Spotify ID. From this I found the ID within the object for the artist given under object.artists.items[0].id. With this ID I was able to do more things that related to the specific artist in question.
+### IDs
+One of the things that seems important to retrieve information is "ID"s. Their are Spotify API that uses these IDs to specify search for things such as artist, albums, and playlists. The guide on the API site explains how to use these IDs pretty well, however I had a hard time finding out how to acquire these ID. To solve this problem, in my own application, I used the "GET An Artist" API and analysed the information sent back.
 
 ### GET Artist
 
-Objects from calling the artist.
-Using this ID I then retrieved the albums of the artist. 
+    var apiKey = null;
+    var api_url = 'http://api.spotify.com';
 
---> Pics of example <--
+    document.getElementById('artist_name_button').addEventListener('click', function(event) {
+        
+        var req = new XMLHttpRequest();
+        var artist_name = document.getElementById('artist_name').value;
+
+         req.open("GET", api_url + "/v1/search?q=" + artist_name + "&type=artist&market=US" , true);
+         req.send(null);
+
+         req.addEventListener('load', function(){
+                if(req.status >= 200 && req.status < 400){
+                        var response = {};
+                        response = JSON.parse(req.responseText);
+                        console.log(JSON.parse(req.responseText));
+                        var id = response.artists.items[0].id;
+                        artist_albums(id);
+                        event.preventDefault();
+                 }else{
+                        console.log('Error in network request');
+                 };
+          });
+    });
+
+In this snippet I took the input from an html page and used it to retrieve an aritist's Spotify detials, including their Spotify ID. From this I found the ID within the object for the artist given under object.artists.items[0].id. With this ID I was able to do more things that related to the specific artist in question.
 
 ### GET Albums
 When examining the album API I noticed a few things with the object retrieved. One of the first things was that to find the albums list, you had to go ----. However, this array holds 20 objects no matter the number of albums. I found that there is a number of repeated albums and that made it difficult to simply print out the albums for each artist. 

@@ -1,19 +1,19 @@
-#Introduction
+# Introduction
 
 The content of this web page is about my experience using the Spotify API and the guide with it. Focusing on fetching data, I found some areas that needed further explanation. 
 
 In addition, I talk about my use of the API in my own web application.
 
-#Getting Started
+# Getting Started
 
 For the purposes of my guide you need to follow these steps to start using the Spotify API.
 
 1. Create a Spotify account
-2. Create a new app from their developer site
-3. Set redirect URI
-4. Acquire your API key under your applications "Clinet Secret"
+1. Create a new app from their developer site
+1. Set redirect URI
+1. Acquire your API key under your applications "Clinet Secret"
 
-#Applying the APIs
+# Applying the APIs
 
 ##IDs (Artists, albums, etc)
 One of the aspects that seems that is importants to retrieve information is IDs. For Spotif uses these IDs to specify things such as artist, album, and playlists. The guide on the API explains fairly how to use these IDs.

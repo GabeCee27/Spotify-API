@@ -78,6 +78,6 @@ To do things like make a new playlist, you need to have an authorization and the
 
 ### POSTS
 
-POSTS with this API recquire one or both the authorization code and the user ID. For example a POST to add a new playlist would look like this.
+POSTS with this API recquire one or both the authorization code and the user ID. For example a POST to add a new playlist would look like this after gaining authorization.
 
      req.open('POST', 'https://api.spotify.com/v1/users/' + user_id + '/playlists', true);

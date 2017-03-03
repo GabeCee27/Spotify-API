@@ -53,13 +53,13 @@ In this snippet I took the input from an html page and used it to retrieve an ar
 
 By using the artist's ID, I was able to retrieve all the albums the artist released. When examining the album API I noticed a few things with the object sent back. One of the first things was that to find the albums list, you had to go object.items and to get the name of the album, object.items.name . However, this array holds 20 objects for each artist. So, I found that there is a number of repeated albums and that made it difficult to simply go through the array and print out the albums for the artist. 
 
-To solve this issue I made a new array that would go through the one from the object and ignore any repeated items.
+To solve this issue I made a new array that would go through the one from the object and ignore any repeated items and any albums that were just singles from the artist.
 
     var albums = [];
     for(var i =0;i < response.items.length-1; i++){
         for(var k=0; i<response.items.length-1;){
 
-             if(albums.length == 0 || (albums[k] != response.items[i].name)){
+             if(albums.length == 0 || ((albums[k] != response.items[i].name) && (response.items[i].album_type == 'album')){
                  if(albums.length != 0){k+=1};
                  albums.push(response.items[i].name);
              } else {i+=1};

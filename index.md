@@ -66,3 +66,10 @@ To solve this issue I made a new array that would go through the one from the ob
          }
     };
 
+### Authorization Code
+
+The authorization code is how the user gives the API permission to modify data. With this we can do something like make a new playlist and populate it with tracks. A lot of the POST methods with Spotify have to use an authorization code since most of the time we are trying to manipulate someone's else's profile.
+
+### User ID
+
+To do things like make a new playlist, you need to have an authorization and the user's Spotify's ID number. This is a specific number for each user's profile. With the you can also add tracks to a playlest, delete tracks, follow and unfollow. Anything that changes the user's profile requires the user's ID.

@@ -73,3 +73,9 @@ The authorization code is how the user gives the API permission to modify data. 
 ### User ID
 
 To do things like make a new playlist, you need to have an authorization and the user's Spotify's ID number. This is a specific number for each user's profile. With the you can also add tracks to a playlest, delete tracks, follow and unfollow. Anything that changes the user's profile requires the user's ID.
+
+### POSTS
+
+POSTS with this API recquire one or both the authorization code and the user ID. 
+
+     req.open('POST', 'https://api.spotify.com/v1/users/' + user_id + '/playlists', true);

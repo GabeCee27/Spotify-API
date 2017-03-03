@@ -84,4 +84,6 @@ POSTS with this API recquire one or both the authorization code and the user ID.
 
 ![my-api](/api.png)
 
+Here is a screenshot of my own application. I retrieved the information of a given artist and then retrieved the albums that artist released and acquired the album cover for each. I used DOM to display the outcomes.
+
 

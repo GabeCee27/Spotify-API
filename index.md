@@ -1,8 +1,6 @@
 # Introduction
 
-The content of this web page is about my experience using the Spotify API and the guide with it. Focusing on fetching data, I found some areas that needed further explanation. 
-
-In addition, I talk about my use of the API in my own web application.
+The content of this web page is about my experience using the Spotify API and the guide with it. Focusing on certain areas, I found some areas that needed further explanation. Furthermore, I talk about my use of the API in my own web application.
 
 # Getting Started
 
@@ -81,3 +79,7 @@ To do things like make a new playlist, you need to have an authorization and the
 POSTS with this API recquire one or both the authorization code and the user ID. For example a POST to add a new playlist would look like this after gaining authorization.
 
      req.open('POST', 'https://api.spotify.com/v1/users/' + user_id + '/playlists', true);
+     
+### My Application
+
+

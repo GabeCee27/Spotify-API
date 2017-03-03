@@ -66,8 +66,6 @@ To solve this issue I made a new array that would go through the one from the ob
 
 ### Authorization Code
 
-       GET https://accounts.spotify.com/authorize
-
 The authorization code is how the user gives the API permission to modify data. With this we can do something like make a new playlist and populate it with tracks. A lot of the POST methods with Spotify have to use an authorization code since most of the time we are trying to manipulate someone's else's profile.
 
 ### User ID
